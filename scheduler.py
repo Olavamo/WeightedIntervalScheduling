@@ -21,7 +21,6 @@ def sortbyfinishTime(val):
 inputjobs.sort(key = sortbyfinishTime)  
 # print(inputjobs)
 
-# Do not modify!
 inputjobs.insert(0, [0,0,0,0]) # dummy 0th item for debugging purposes related to index)
 
 # Step 2: set up memoization array
@@ -55,8 +54,8 @@ findSolution(len(memo)-1)
 
 # Step 4: print optimal jobs
 includedjobs.reverse()
-print ("=============================================================================")
-print ("Optimal set of jobs for max profit of " + str(memo[-1]))
+print ("=========Weighted Interval Scheduling By Charles Son and Ashley Ahn=========")
+print ("Optimal set of jobs for max value " + str(memo[-1]))
 for index in includedjobs:
-    print ("Job " + str(inputjobs[index][0]) + ": Time (" + str(inputjobs[index][1]) + "-" + str(inputjobs[index][2]) + ") Value:" + str(inputjobs[index][3]))
-print ("=============================================================================")
+    print ("Job " + str(inputjobs[index][0]) + ": Time [" + str(inputjobs[index][1]) + "-" + str(inputjobs[index][2]) + "] Value:" + str(inputjobs[index][3]))
+print ("============================================================================")
