@@ -34,10 +34,10 @@ def latestCompatible(jobs, n):
     return 0
 
 for i in range(1, len(inputjobs)):
-    print(inputjobs[i])
+    # print(inputjobs[i])
     memo[i] = max(inputjobs[i][3] + memo[latestCompatible(inputjobs, i)], memo[i-1])
-print ("Memoization array: " + str(memo))
-print ("Max profit from optimal set of jobs: " + str(memo[-1]))
+# print ("Memoization array: " + str(memo))
+# print ("Max profit from optimal set of jobs: " + str(memo[-1]))
 
 # Step 3: find optimal solution
 includedjobs = []
@@ -55,5 +55,8 @@ findSolution(len(memo)-1)
 
 # Step 4: print optimal jobs
 includedjobs.reverse()
+print ("=============================================================================")
+print ("Optimal set of jobs for max profit of " + str(memo[-1]))
 for index in includedjobs:
     print ("Job " + str(inputjobs[index][0]) + ": Time (" + str(inputjobs[index][1]) + "-" + str(inputjobs[index][2]) + ") Value:" + str(inputjobs[index][3]))
+print ("=============================================================================")
